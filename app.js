@@ -47,6 +47,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+app.get('/hello', (req, res) => {
+    console.log("loading home page")
+    res.sendFile(path.join(__dirname, 'public', 'hello.html'));
+});
+
 app.listen(3000, () => {
     console.log('Email Server started on port 3000');
 });
