@@ -1,1 +1,1 @@
-# email-sender
+# email-sender project
