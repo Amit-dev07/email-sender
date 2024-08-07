@@ -40,7 +40,7 @@ app.post('/send-email', (req, res) => {
     });
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     console.log("loading home page")
