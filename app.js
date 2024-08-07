@@ -38,7 +38,8 @@ app.post('/send-email', (req, res) => {
         }
         console.log('Email sent:', info.response);
         var ressend = {"msg":"Email sent successfully!"};
-        res.end(ressend);
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(ressend));
     });
 });
 
