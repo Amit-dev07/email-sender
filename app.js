@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.post('/send-email', (req, res) => {
     const { name, email, message } = req.body;
     console.log("Send email start");
+    console.log(name,email,message);
 
     const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
@@ -52,6 +53,10 @@ app.get('/hello', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'hello.html'));
 });
 
+app.get('/main', (req, res) => {
+    console.log("loading home page")
+    res.sendFile(path.join(__dirname, 'public', 'index2.html'));
+});
 app.listen(3000, () => {
     console.log('Email Server started on port 3000');
 });
