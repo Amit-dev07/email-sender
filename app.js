@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 
 app.post('/send-email', (req, res) => {
     const { name, email, message } = req.body;
+    console.log("Send email start");
 
     const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
@@ -42,6 +43,7 @@ app.post('/send-email', (req, res) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
+    console.log("loading home page")
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
